@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import torch
 import logging
-from typing import Tuple, Dict
+from typing import Tuple, Dict, List
 import pickle
 import os
 

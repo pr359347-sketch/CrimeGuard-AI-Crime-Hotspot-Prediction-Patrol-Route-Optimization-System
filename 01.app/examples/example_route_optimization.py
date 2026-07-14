@@ -3,12 +3,12 @@ Example: Route optimization for detected hotspots
 """
 import sys
 import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '05.src', 'src'))
 
 import numpy as np
-from route_optimizer import PatrolRouteOptimizer, ResourceAllocationOptimizer
-from visualization import HotspotVisualizer
-from config import config
+from src.route_optimizer import PatrolRouteOptimizer, ResourceAllocationOptimizer
+from src.visualization import HotspotVisualizer
+from src.config import config
 
 def main():
     print("="*70)
@@ -50,27 +50,22 @@ def main():
     # Resource allocation
     print("\n4. Allocating resources based on hotspot density...")
     predictions = np.random.uniform(0, 1, (config.GRID_SIZE, config.GRID_SIZE))
-    allocator = ResourceAllocationOptimizer(predictions)
-    allocation = allocator.allocate_resources()
+    allocator = ResourceAllocationOptimizer()
+    allocation = allocator.allocate_resources(predictions.flatten().tolist(), num_resources=10)
     
-    print(f"   ✓ Allocated resources to {allocation['total_targets']} targets")
-    print(f"   ✓ High-priority targets: {allocation['high_priority_count']}")
-    
-    print("\n   Top 5 Resource Allocation Targets:")
-    for target in allocation['allocations'][:5]:
-        print(f"      Cell ({target['lat_grid']}, {target['lon_grid']}) - Priority: {target['priority']} ({target['probability']:.2%})")
+    print(f"   ✓ Allocated resources to {len(allocation)} targets")
     
     # Visualization
     print("\n5. Creating visualizations...")
     visualizer = HotspotVisualizer(config.CHICAGO_BOUNDS, 'Chicago')
     
     # Create heatmap
-    heatmap = visualizer.create_heatmap(predictions, 'example_heatmap.html')
-    print("   ✓ Heatmap saved to example_heatmap.html")
+    heatmap = visualizer.create_heatmap(predictions, '06.images/example_heatmap.html')
+    print("   ✓ Heatmap saved to 06.images/example_heatmap.html")
     
     # Create route map
-    route_map = visualizer.create_patrol_route_map(routes_coords, 'example_routes.html')
-    print("   ✓ Route map saved to example_routes.html")
+    route_map = visualizer.create_patrol_route_map(routes_coords, '06.images/example_routes.html')
+    print("   ✓ Route map saved to 06.images/example_routes.html")
     
     print("\n" + "="*70)
     print("✓ ROUTE OPTIMIZATION EXAMPLE COMPLETE")

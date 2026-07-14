@@ -3,11 +3,11 @@ Example: Model evaluation and metrics
 """
 import sys
 import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '05.src', 'src'))
 
 import numpy as np
-from model_evaluation import PredictionEvaluator, HotspotDetectionValidator
-from config import config
+from src.model_evaluation import PredictionEvaluator, HotspotDetectionValidator
+from src.config import config
 
 def main():
     print("="*70)

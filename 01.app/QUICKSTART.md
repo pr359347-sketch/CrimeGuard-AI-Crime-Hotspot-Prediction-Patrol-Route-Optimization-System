@@ -102,8 +102,7 @@ print(f"Predicted hotspots: {len(hotspots)}")
    - View top hotspots table
 
 2. **Understand the Model** (15 min)
-   - Read `System Info` tab for architecture
-   - Check `README.md` for full documentation
+   - Read `README.md` for full documentation
    - Review examples in `examples/` folder
 
 3. **Customize for Your Data** (30 min)

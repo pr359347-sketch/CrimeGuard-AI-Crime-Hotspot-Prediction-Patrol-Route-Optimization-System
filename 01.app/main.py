@@ -5,7 +5,7 @@ import argparse
 import logging
 
 # Add src to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '05.src', 'src'))
 
 from src.config import config
 from src.prediction_pipeline import CrimeHotspotPipeline

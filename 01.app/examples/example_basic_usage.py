@@ -3,10 +3,10 @@ Basic usage example: Load data and generate predictions
 """
 import sys
 import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '05.src', 'src'))
 
-from prediction_pipeline import CrimeHotspotPipeline
-from config import config
+from src.prediction_pipeline import CrimeHotspotPipeline
+from src.config import config
 
 def main():
     print("="*70)
@@ -45,7 +45,7 @@ def main():
     # Display top hotspots
     if hotspots:
         print("\n   Top 10 hotspots (grid coordinates):")
-        from visualization import StatisticsVisualizer
+        from src.visualization import StatisticsVisualizer
         top_hotspots = StatisticsVisualizer.get_top_hotspots(predictions, top_n=10)
         for hs in top_hotspots:
             print(f"      Rank {hs['rank']}: Cell ({hs['lat_grid']}, {hs['lon_grid']}) - {hs['probability']:.2%}")

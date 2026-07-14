@@ -189,7 +189,7 @@ BATCH_SIZE = 64  # Instead of 32
 ```
 
 ### For Better Accuracy:
-```python
+```bash
 EPOCHS = 100
 GRID_SIZE = 50
 BATCH_SIZE = 16
@@ -197,7 +197,7 @@ LEARNING_RATE = 0.0001
 ```
 
 ### For Production:
-```python
+```bash
 # Use GPU
 config.DEVICE = 'cuda'
 
