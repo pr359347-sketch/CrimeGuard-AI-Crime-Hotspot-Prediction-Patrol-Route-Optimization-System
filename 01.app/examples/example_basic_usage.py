@@ -3,7 +3,7 @@ Basic usage example: Load data and generate predictions
 """
 import sys
 import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '05.src', 'src'))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '05.src')))
 
 from src.prediction_pipeline import CrimeHotspotPipeline
 from src.config import config

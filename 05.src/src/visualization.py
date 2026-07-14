@@ -8,7 +8,7 @@ from typing import List, Dict
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-from config import config
+from src.config import config
 
 class HotspotVisualizer:
     def __init__(self, bounds: dict, city: str = 'Chicago'):

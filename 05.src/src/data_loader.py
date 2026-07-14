@@ -10,7 +10,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-from config import config
+from src.config import config
 
 class CrimeDataLoader:
     """Load and preprocess crime data from Chicago and LA"""

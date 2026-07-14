@@ -10,13 +10,17 @@ import os
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-from config import config
-from data_loader import CrimeDataLoader
-from feature_engineering import FeatureEngineer
-from st_gnn_model import CrimeHotspotPredictor, ModelTrainer
-from route_optimizer import PatrolRouteOptimizer, ResourceAllocationOptimizer
-from visualization import HotspotVisualizer, StatisticsVisualizer
-from model_evaluation import PredictionEvaluator, HotspotDetectionValidator
+from src.config import config
+from src.data_loader import CrimeDataLoader
+from src.feature_engineering import FeatureEngineer
+try:
+    from src.st_gnn_model import CrimeHotspotPredictor, ModelTrainer
+except Exception:
+    CrimeHotspotPredictor = None
+    ModelTrainer = None
+from src.route_optimizer import PatrolRouteOptimizer, ResourceAllocationOptimizer
+from src.visualization import HotspotVisualizer, StatisticsVisualizer
+from src.model_evaluation import PredictionEvaluator, HotspotDetectionValidator
 
 class CrimeHotspotPipeline:
     """End-to-end pipeline for crime prediction and patrol optimization"""
