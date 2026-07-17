@@ -10,7 +10,7 @@ paths:
   logs_dir: logs
 
 crime:
-  file_name: Crime.csv
+  file_name: Crime_sample.csv
 
 weather:
   file_name: weather.csv
