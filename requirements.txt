@@ -1,0 +1,17 @@
+torch==2.7.1
+torch-geometric==2.6.1
+numpy==2.3.2
+pandas==2.3.1
+scikit-learn==1.7.1
+streamlit==1.48.0
+streamlit-folium==0.25.0
+folium==0.20.0
+or-tools==9.14.6206
+pyyaml==6.0.2
+matplotlib==3.10.5
+networkx==3.5
+tqdm
+holidays
+geopy
+pyyaml
+pyarrow

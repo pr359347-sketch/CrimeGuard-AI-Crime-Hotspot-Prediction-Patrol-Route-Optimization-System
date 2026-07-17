@@ -1,0 +1,17 @@
+name: CrimeGuard-AI
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - torch
+    - torch-geometric
+    - pandas
+    - numpy
+    - streamlit
+    - folium
+    - streamlit-folium
+    - ortools
+    - scikit-learn
+    - pyyaml
