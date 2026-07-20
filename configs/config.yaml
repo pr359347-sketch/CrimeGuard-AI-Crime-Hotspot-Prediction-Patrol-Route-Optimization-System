@@ -1,0 +1,24 @@
+project:
+  name: CrimeGuard-AI
+  version: 2.0
+
+paths:
+  raw_data: data/raw
+  processed_data: data/processed
+  model_dir: models/checkpoints
+  outputs: outputs
+  logs: logs
+
+training:
+  batch_size: 32
+  epochs: 50
+  learning_rate: 0.001
+  hidden_dim: 64
+  sequence_length: 7
+
+prediction:
+  threshold: 0.6
+
+map:
+  default_lat: 41.8781
+  default_lon: -87.6298

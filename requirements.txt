@@ -14,7 +14,7 @@ plotly
 matplotlib==3.10.5
 networkx==3.5
 
-or-tools==9.14.6206
+#or-tools==9.10.4067
 
 pyyaml==6.0.2
 python-dotenv
@@ -27,3 +27,9 @@ pyarrow
 
 fastapi
 uvicorn
+loguru
+pyyaml
+tensorboard
+opencv-python
+geopandas
+shapely
